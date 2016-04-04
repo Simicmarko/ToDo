@@ -3,7 +3,7 @@
 //  ToDo
 //
 //  Created by Cubes School 7 on 3/30/16.
-//  Copyright © 2016 Cubes School 7. All rights reserved.
+//  Copyright © 2016 Cubes School 7. All rights reserved
 //
 
 #import "LoginViewControler.h"
@@ -30,7 +30,7 @@
                               
         
         NSDictionary*attributes = @{
-                                    NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Regular" size:14.0<#(CGFloat)#>],
+                                    NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Regular" size:14.0],
                                     NSForegroundColorAttributeName: [UIColor withColor]
                                     };
         textField.attributedPlaceholder= [[[NSAttributedString alloc]init] initwithString:textField.placeholder

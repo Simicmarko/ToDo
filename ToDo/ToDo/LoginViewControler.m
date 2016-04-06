@@ -31,18 +31,13 @@
         
         NSDictionary*attributes = @{
                                     NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Regular" size:14.0],
-                                    NSForegroundColorAttributeName: [UIColor withColor]
-                                    };
-        textField.attributedPlaceholder= [[[NSAttributedString alloc]init] initwithString:textField.placeholder
+                                    NSForegroundColorAttributeName: Color};
+        
+        textField.attributedPlaceholder= [[[NSAttributedString alloc]init] initWithString:textField.placeholder
                                                                                attributes:attributes];
     }
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-#pragma mark - Actions
-
-}
 - (IBAction)ForgotPasswordButtonTapped:(UIButton *)sender {
 }
 - (IBAction)SignInButtonTapped:(UIButton *)sender {
@@ -57,5 +52,6 @@
     [self configureTextField:self.usernameTextField];
     
     [self configureTextField:self.passwordTextField];
+}
 
 @end

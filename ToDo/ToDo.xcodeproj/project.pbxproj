@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D64CF8C11CB7ED4F00A41EF7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */; };
 		D65EC4111CAC061200ADC0C6 /* LoginViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EC4101CAC061200ADC0C6 /* LoginViewControler.m */; };
 		D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EC4131CAC092E00ADC0C6 /* SignUpViewController.m */; };
 		D696C9631CA96D24008C8202 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D696C9621CA96D24008C8202 /* main.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D65EC40F1CAC061200ADC0C6 /* LoginViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewControler.h; sourceTree = "<group>"; };
 		D65EC4101CAC061200ADC0C6 /* LoginViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControler.m; sourceTree = "<group>"; };
 		D65EC4121CAC092E00ADC0C6 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				D65EC4101CAC061200ADC0C6 /* LoginViewControler.m */,
 				D65EC4121CAC092E00ADC0C6 /* SignUpViewController.h */,
 				D65EC4131CAC092E00ADC0C6 /* SignUpViewController.m */,
+				D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */,
+				D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */,
 				D696C9631CA96D24008C8202 /* main.m in Sources */,
 				D696C96F1CA96D25008C8202 /* ToDo.xcdatamodeld in Sources */,
+				D64CF8C11CB7ED4F00A41EF7 /* HomeViewController.m in Sources */,
 				D65EC4111CAC061200ADC0C6 /* LoginViewControler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

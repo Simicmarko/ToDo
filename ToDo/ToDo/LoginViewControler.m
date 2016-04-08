@@ -9,6 +9,11 @@
 #import "LoginViewControler.h"
 
 @interface LoginViewControler()
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (weak, nonatomic) IBOutlet UIView *maskLogoView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *usernameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -16,6 +21,59 @@
 @end
 
 @implementation LoginViewControler
+
+
+#pragma mark- Public API
+-(void) prepareforAnimations{
+    CGRect submitButtonFrame= self.submitButton.frame;
+    submitButtonFrame.origin.x=self.submitButton.frame.size.width;
+    self.submitButton.frame=submitButtonFrame;
+    
+    
+    CGRect footerViewFrame= self.footerView.frame;
+    footerViewFrame.origin.y=self.footerView.frame.size.height;
+    self.footerView.frame=footerViewFrame;
+
+
+    
+}
+-(void)animate {
+    
+    [UIView animateWithDuration:2.4 animations:^{
+        CGRect frame=self.footerView.frame;
+        frame.origin.y=625;
+        self.footerView.frame=frame;
+    }];
+    
+    [ UIView animateWithDuration:1.4 animations:^{
+        self.maskLogoView.alpha=0.0;
+    }];
+    [UIView animateWithDuration:3.4
+                          delay:0.2
+                        options:UIViewAnimationOptionCurveEaseInOut
+     
+                     animations:^{
+                         CGRect submitButtonFrame= self.submitButton.frame;
+                         submitButtonFrame.origin.x=0.0;
+                         self.submitButton.frame=submitButtonFrame;
+                         
+                     }completion:NULL] ;
+
+   // [self.maskLogoView setAlpha:0.0]
+}
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self animate];
+}
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self prepareforAnimations];
+}
+- (IBAction)SignUpButtonTapped:(UIButton *)sender {
+}
+
 
 
 
@@ -42,8 +100,6 @@
 }
 - (IBAction)SignInButtonTapped:(UIButton *)sender {
 }
-- (IBAction)SignUpButtonTapped:(UIButton *)sender {
-}
 
 #pragma mark- View lifecycle
 - (void)viewDidLoad {
@@ -52,6 +108,8 @@
     [self configureTextField:self.usernameTextField];
     
     [self configureTextField:self.passwordTextField];
+    
+    [self.activityIndicatorView stopAnimating];
 }
 
 @end

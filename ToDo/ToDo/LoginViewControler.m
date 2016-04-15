@@ -22,9 +22,9 @@
 
 @implementation LoginViewControler
 
+#pragma mark - Public API
 
-#pragma mark- Public API
--(void) prepareforAnimations{
+- (void)prepareforAnimations {
     CGRect submitButtonFrame= self.submitButton.frame;
     submitButtonFrame.origin.x=self.submitButton.frame.size.width;
     self.submitButton.frame=submitButtonFrame;
@@ -37,7 +37,8 @@
 
     
 }
--(void)animate {
+
+- (void)animate {
     
     [UIView animateWithDuration:2.4 animations:^{
         CGRect frame=self.footerView.frame;
@@ -61,31 +62,14 @@
 
    // [self.maskLogoView setAlpha:0.0]
 }
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self animate];
-}
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self prepareforAnimations];
-}
-- (IBAction)SignUpButtonTapped:(UIButton *)sender {
-}
 
-
-
-
-#pragma mark - Private API
-
--(void)configureTextField:(UITextField *)textField {
+- (void)configureTextField:(UITextField *)textField {
     if (textField.placeholder.length>0){
         UIColor*Color=[UIColor colorWithRed:117.0/225.0
                                       green:113.0/225.0
                                        blue:111.0/225.0
                                       alpha:1];
-                              
+        
         
         NSDictionary*attributes = @{
                                     NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Regular" size:14.0],
@@ -96,12 +80,24 @@
     }
 }
 
+#pragma mark - Actions
+
+- (IBAction)SignUpButtonTapped:(UIButton *)sender {
+}
+
 - (IBAction)ForgotPasswordButtonTapped:(UIButton *)sender {
 }
+
 - (IBAction)SignInButtonTapped:(UIButton *)sender {
+    sender.enabled = NO;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"HomeSegue" sender:self];
+    });
 }
 
 #pragma mark- View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -110,6 +106,18 @@
     [self configureTextField:self.passwordTextField];
     
     [self.activityIndicatorView stopAnimating];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self animate];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self prepareforAnimations];
 }
 
 @end

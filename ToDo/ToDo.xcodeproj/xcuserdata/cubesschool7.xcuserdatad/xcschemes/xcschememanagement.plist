@@ -9,10 +9,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ToDoWatch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ToDoWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>D696C95D1CA96D24008C8202</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6FD07291CBE74E700355D13</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,6 +12,8 @@
 
 // Macros
 #define COLOR(r,g,b,a)               [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+static NSString *const USER_IMAGE    = @"USER_IMAGE";
+static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
 
 // Colors
 #define kOrangeColor             COLOR(254.0, 172.0, 73.0, 1.0)

@@ -102,13 +102,34 @@
     [self.ProfileImageView addGestureRecognizer:tap];
     self.ProfileImageView.userInteractionEnabled = YES;
     
+    [self configureProfileImage];
+}
+
+-(void)configureProfileImage {
     self. ProfileImageView.clipsToBounds= YES;
     self.ProfileImageView.layer.cornerRadius=self.ProfileImageView.frame.size.width/2;
+
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE]) {
+        self.ProfileImageView.image=[[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE] ;
+      
+        NSData*data =[[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE];
+        
+        self.ProfileImageView.image= [[UIImage alloc] initWithData:data];
+
+    }
+    
+        
 };
 
-
-
-
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (![[NSUserDefaults standardUserDefaults]boolForKey:WALKTHROUGH_PRESENTED]) {
+        [self performSegueWithIdentifier:@"Walkthrough" sender: self];
+    }
+    
+}
 
 # pragma mark - UITableViewDelegate
 
@@ -124,16 +145,12 @@
         image = [info objectForKey:UIImagePickerControllerOriginalImage];
     }
     self.ProfileImageView.image=image;
+    NSData*data= UIImageJPEGRepresentation(image, 1.0);
+    
+    [[NSUserDefaults standardUserDefaults]  setObject:data forKey:USER_IMAGE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
-
-
-
-
-
-
-
-
 
 @end

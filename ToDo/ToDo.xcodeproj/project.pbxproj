@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D631B0AF1CCA52A3002EDD0D /* WalkthroughtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */; };
 		D64CF8C11CB7ED4F00A41EF7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */; };
 		D65EC4111CAC061200ADC0C6 /* LoginViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EC4101CAC061200ADC0C6 /* LoginViewControler.m */; };
 		D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EC4131CAC092E00ADC0C6 /* SignUpViewController.m */; };
@@ -73,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D631B0AD1CCA52A3002EDD0D /* WalkthroughtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughtViewController.h; sourceTree = "<group>"; };
+		D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughtViewController.m; sourceTree = "<group>"; };
 		D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D65EC40F1CAC061200ADC0C6 /* LoginViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewControler.h; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				D65EC40F1CAC061200ADC0C6 /* LoginViewControler.h */,
 				D65EC4101CAC061200ADC0C6 /* LoginViewControler.m */,
 				D65EC4121CAC092E00ADC0C6 /* SignUpViewController.h */,
+				D631B0AD1CCA52A3002EDD0D /* WalkthroughtViewController.h */,
+				D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */,
 				D65EC4131CAC092E00ADC0C6 /* SignUpViewController.m */,
 				D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */,
 				D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */,
@@ -400,6 +405,7 @@
 				D696C96F1CA96D25008C8202 /* ToDo.xcdatamodeld in Sources */,
 				D64CF8C11CB7ED4F00A41EF7 /* HomeViewController.m in Sources */,
 				D65EC4111CAC061200ADC0C6 /* LoginViewControler.m in Sources */,
+				D631B0AF1CCA52A3002EDD0D /* WalkthroughtViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

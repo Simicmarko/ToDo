@@ -20,6 +20,8 @@
 		D696C9711CA96D25008C8202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D696C9701CA96D25008C8202 /* Assets.xcassets */; };
 		D696C9741CA96D25008C8202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D696C9721CA96D25008C8202 /* LaunchScreen.storyboard */; };
 		D696C9811CA974D5008C8202 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D696C9801CA974D5008C8202 /* CoreLocation.framework */; };
+		D6B261F81CCE3DA8000ED953 /* WalktroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B261F71CCE3DA8000ED953 /* WalktroughCollectionViewCell.m */; };
+		D6B261FB1CCE43B5000ED953 /* WalktroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B261FA1CCE43B5000ED953 /* WalktroughItem.m */; };
 		D6FD07271CBE721400355D13 /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FD07261CBE721400355D13 /* Pad.storyboard */; };
 		D6FD072E1CBE74E700355D13 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FD072C1CBE74E700355D13 /* Interface.storyboard */; };
 		D6FD07301CBE74E700355D13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6FD072F1CBE74E700355D13 /* Assets.xcassets */; };
@@ -97,6 +99,10 @@
 		D696C9731CA96D25008C8202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D696C9751CA96D25008C8202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D696C9801CA974D5008C8202 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D6B261F61CCE3DA8000ED953 /* WalktroughCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalktroughCollectionViewCell.h; sourceTree = "<group>"; };
+		D6B261F71CCE3DA8000ED953 /* WalktroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalktroughCollectionViewCell.m; sourceTree = "<group>"; };
+		D6B261F91CCE43B5000ED953 /* WalktroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalktroughItem.h; sourceTree = "<group>"; };
+		D6B261FA1CCE43B5000ED953 /* WalktroughItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalktroughItem.m; sourceTree = "<group>"; };
 		D6FD07261CBE721400355D13 /* Pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pad.storyboard; sourceTree = "<group>"; };
 		D6FD072A1CBE74E700355D13 /* ToDoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FD072D1CBE74E700355D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -200,7 +206,11 @@
 				D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */,
 				D65EC4131CAC092E00ADC0C6 /* SignUpViewController.m */,
 				D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */,
+				D6B261F61CCE3DA8000ED953 /* WalktroughCollectionViewCell.h */,
+				D6B261F71CCE3DA8000ED953 /* WalktroughCollectionViewCell.m */,
 				D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */,
+				D6B261F91CCE43B5000ED953 /* WalktroughItem.h */,
+				D6B261FA1CCE43B5000ED953 /* WalktroughItem.m */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -398,11 +408,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D696C9691CA96D25008C8202 /* ViewController.m in Sources */,
+				D6B261FB1CCE43B5000ED953 /* WalktroughItem.m in Sources */,
 				D696C9661CA96D25008C8202 /* AppDelegate.m in Sources */,
 				D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */,
 				D696C9631CA96D24008C8202 /* main.m in Sources */,
 				D669D8761CC117CD00D7FE43 /* TaskTableViewCell.m in Sources */,
 				D696C96F1CA96D25008C8202 /* ToDo.xcdatamodeld in Sources */,
+				D6B261F81CCE3DA8000ED953 /* WalktroughCollectionViewCell.m in Sources */,
 				D64CF8C11CB7ED4F00A41EF7 /* HomeViewController.m in Sources */,
 				D65EC4111CAC061200ADC0C6 /* LoginViewControler.m in Sources */,
 				D631B0AF1CCA52A3002EDD0D /* WalkthroughtViewController.m in Sources */,

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D631B0AF1CCA52A3002EDD0D /* WalkthroughtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */; };
 		D64CF8C11CB7ED4F00A41EF7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */; };
+		D64ED0021CDA1E90003AEDB0 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64ED0011CDA1E90003AEDB0 /* StatisticsViewController.m */; };
+		D64ED0051CDA2DD8003AEDB0 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64ED0041CDA2DD8003AEDB0 /* WebViewController.m */; };
 		D65EC4111CAC061200ADC0C6 /* LoginViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EC4101CAC061200ADC0C6 /* LoginViewControler.m */; };
 		D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65EC4131CAC092E00ADC0C6 /* SignUpViewController.m */; };
 		D669D8761CC117CD00D7FE43 /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D669D8751CC117CD00D7FE43 /* TaskTableViewCell.m */; };
@@ -80,6 +82,11 @@
 		D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughtViewController.m; sourceTree = "<group>"; };
 		D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D64ED0001CDA1E90003AEDB0 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		D64ED0011CDA1E90003AEDB0 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
+		D64ED0031CDA2DD8003AEDB0 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		D64ED0041CDA2DD8003AEDB0 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		D64ED0061CDA3524003AEDB0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D65EC40F1CAC061200ADC0C6 /* LoginViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewControler.h; sourceTree = "<group>"; };
 		D65EC4101CAC061200ADC0C6 /* LoginViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControler.m; sourceTree = "<group>"; };
 		D65EC4121CAC092E00ADC0C6 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -178,6 +185,7 @@
 				D696C9701CA96D25008C8202 /* Assets.xcassets */,
 				D696C9751CA96D25008C8202 /* Info.plist */,
 				D696C9621CA96D24008C8202 /* main.m */,
+				D64ED0061CDA3524003AEDB0 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -194,7 +202,11 @@
 		D696C97C1CA96D7D008C8202 /* Controlers */ = {
 			isa = PBXGroup;
 			children = (
+				D64ED0041CDA2DD8003AEDB0 /* WebViewController.m */,
+				D64ED0031CDA2DD8003AEDB0 /* WebViewController.h */,
 				D696C9671CA96D25008C8202 /* ViewController.h */,
+				D64ED0001CDA1E90003AEDB0 /* StatisticsViewController.h */,
+				D64ED0011CDA1E90003AEDB0 /* StatisticsViewController.m */,
 				D669D8771CC1184B00D7FE43 /* Constants.h */,
 				D669D8741CC117CD00D7FE43 /* TaskTableViewCell.h */,
 				D669D8751CC117CD00D7FE43 /* TaskTableViewCell.m */,
@@ -205,9 +217,9 @@
 				D631B0AD1CCA52A3002EDD0D /* WalkthroughtViewController.h */,
 				D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */,
 				D65EC4131CAC092E00ADC0C6 /* SignUpViewController.m */,
-				D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */,
 				D6B261F61CCE3DA8000ED953 /* WalktroughCollectionViewCell.h */,
 				D6B261F71CCE3DA8000ED953 /* WalktroughCollectionViewCell.m */,
+				D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */,
 				D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */,
 				D6B261F91CCE43B5000ED953 /* WalktroughItem.h */,
 				D6B261FA1CCE43B5000ED953 /* WalktroughItem.m */,
@@ -410,8 +422,10 @@
 				D696C9691CA96D25008C8202 /* ViewController.m in Sources */,
 				D6B261FB1CCE43B5000ED953 /* WalktroughItem.m in Sources */,
 				D696C9661CA96D25008C8202 /* AppDelegate.m in Sources */,
+				D64ED0021CDA1E90003AEDB0 /* StatisticsViewController.m in Sources */,
 				D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */,
 				D696C9631CA96D24008C8202 /* main.m in Sources */,
+				D64ED0051CDA2DD8003AEDB0 /* WebViewController.m in Sources */,
 				D669D8761CC117CD00D7FE43 /* TaskTableViewCell.m in Sources */,
 				D696C96F1CA96D25008C8202 /* ToDo.xcdatamodeld in Sources */,
 				D6B261F81CCE3DA8000ED953 /* WalktroughCollectionViewCell.m in Sources */,
@@ -559,6 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;
@@ -572,6 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;

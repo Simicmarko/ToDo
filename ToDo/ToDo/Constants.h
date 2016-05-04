@@ -19,6 +19,7 @@ static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
 #define kOrangeColor             COLOR(254.0, 172.0, 73.0, 1.0)
 #define kPurpleColor             COLOR(187.0, 114.0, 255.0, 1.0)
 #define kTurquoColor             COLOR(72.0, 211.0, 194.0, 1.0)
+#define ZERO_VALUE                  0.0
 
 //Enums
 typedef NS_ENUM (NSInteger, TaskGroup) {

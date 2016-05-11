@@ -18,10 +18,15 @@
 		D696C9661CA96D25008C8202 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D696C9651CA96D25008C8202 /* AppDelegate.m */; };
 		D696C9691CA96D25008C8202 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D696C9681CA96D25008C8202 /* ViewController.m */; };
 		D696C96C1CA96D25008C8202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D696C96A1CA96D25008C8202 /* Main.storyboard */; };
-		D696C96F1CA96D25008C8202 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D696C96D1CA96D25008C8202 /* ToDo.xcdatamodeld */; };
 		D696C9711CA96D25008C8202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D696C9701CA96D25008C8202 /* Assets.xcassets */; };
 		D696C9741CA96D25008C8202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D696C9721CA96D25008C8202 /* LaunchScreen.storyboard */; };
 		D696C9811CA974D5008C8202 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D696C9801CA974D5008C8202 /* CoreLocation.framework */; };
+		D6B206ED1CE35A66009E51FD /* DataMenager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B206EC1CE35A66009E51FD /* DataMenager.m */; };
+		D6B206EF1CE35B32009E51FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B206EE1CE35B32009E51FD /* MapKit.framework */; };
+		D6B206F11CE35B3A009E51FD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B206F01CE35B3A009E51FD /* CoreData.framework */; };
+		D6B206F41CE370CD009E51FD /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6B206F21CE370CD009E51FD /* ToDo.xcdatamodeld */; };
+		D6B206F91CE370E3009E51FD /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B206F61CE370E3009E51FD /* Task+CoreDataProperties.m */; };
+		D6B206FA1CE370E3009E51FD /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B206F81CE370E3009E51FD /* Task.m */; };
 		D6B261F81CCE3DA8000ED953 /* WalktroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B261F71CCE3DA8000ED953 /* WalktroughCollectionViewCell.m */; };
 		D6B261FB1CCE43B5000ED953 /* WalktroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B261FA1CCE43B5000ED953 /* WalktroughItem.m */; };
 		D6FD07271CBE721400355D13 /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FD07261CBE721400355D13 /* Pad.storyboard */; };
@@ -101,11 +106,19 @@
 		D696C9671CA96D25008C8202 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D696C9681CA96D25008C8202 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D696C96B1CA96D25008C8202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D696C96E1CA96D25008C8202 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
 		D696C9701CA96D25008C8202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D696C9731CA96D25008C8202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D696C9751CA96D25008C8202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D696C9801CA974D5008C8202 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D6B206EB1CE35A66009E51FD /* DataMenager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMenager.h; sourceTree = "<group>"; };
+		D6B206EC1CE35A66009E51FD /* DataMenager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMenager.m; sourceTree = "<group>"; };
+		D6B206EE1CE35B32009E51FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D6B206F01CE35B3A009E51FD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D6B206F31CE370CD009E51FD /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
+		D6B206F51CE370E3009E51FD /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D6B206F61CE370E3009E51FD /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D6B206F71CE370E3009E51FD /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		D6B206F81CE370E3009E51FD /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		D6B261F61CCE3DA8000ED953 /* WalktroughCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalktroughCollectionViewCell.h; sourceTree = "<group>"; };
 		D6B261F71CCE3DA8000ED953 /* WalktroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalktroughCollectionViewCell.m; sourceTree = "<group>"; };
 		D6B261F91CCE43B5000ED953 /* WalktroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalktroughItem.h; sourceTree = "<group>"; };
@@ -132,6 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B206F11CE35B3A009E51FD /* CoreData.framework in Frameworks */,
+				D6B206EF1CE35B32009E51FD /* MapKit.framework in Frameworks */,
 				D696C9811CA974D5008C8202 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +226,8 @@
 				D669D8741CC117CD00D7FE43 /* TaskTableViewCell.h */,
 				D669D8751CC117CD00D7FE43 /* TaskTableViewCell.m */,
 				D696C9681CA96D25008C8202 /* ViewController.m */,
+				D6B206EB1CE35A66009E51FD /* DataMenager.h */,
+				D6B206EC1CE35A66009E51FD /* DataMenager.m */,
 				D65EC40F1CAC061200ADC0C6 /* LoginViewControler.h */,
 				D65EC4101CAC061200ADC0C6 /* LoginViewControler.m */,
 				D65EC4121CAC092E00ADC0C6 /* SignUpViewController.h */,
@@ -240,7 +257,11 @@
 		D696C97E1CA96E46008C8202 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D696C96D1CA96D25008C8202 /* ToDo.xcdatamodeld */,
+				D6B206F51CE370E3009E51FD /* Task+CoreDataProperties.h */,
+				D6B206F61CE370E3009E51FD /* Task+CoreDataProperties.m */,
+				D6B206F71CE370E3009E51FD /* Task.h */,
+				D6B206F81CE370E3009E51FD /* Task.m */,
+				D6B206F21CE370CD009E51FD /* ToDo.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -248,6 +269,8 @@
 		D696C97F1CA96E9A008C8202 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6B206F01CE35B3A009E51FD /* CoreData.framework */,
+				D6B206EE1CE35B32009E51FD /* MapKit.framework */,
 				D696C9801CA974D5008C8202 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -423,13 +446,16 @@
 				D6B261FB1CCE43B5000ED953 /* WalktroughItem.m in Sources */,
 				D696C9661CA96D25008C8202 /* AppDelegate.m in Sources */,
 				D64ED0021CDA1E90003AEDB0 /* StatisticsViewController.m in Sources */,
+				D6B206FA1CE370E3009E51FD /* Task.m in Sources */,
 				D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */,
 				D696C9631CA96D24008C8202 /* main.m in Sources */,
 				D64ED0051CDA2DD8003AEDB0 /* WebViewController.m in Sources */,
+				D6B206ED1CE35A66009E51FD /* DataMenager.m in Sources */,
 				D669D8761CC117CD00D7FE43 /* TaskTableViewCell.m in Sources */,
-				D696C96F1CA96D25008C8202 /* ToDo.xcdatamodeld in Sources */,
 				D6B261F81CCE3DA8000ED953 /* WalktroughCollectionViewCell.m in Sources */,
 				D64CF8C11CB7ED4F00A41EF7 /* HomeViewController.m in Sources */,
+				D6B206F91CE370E3009E51FD /* Task+CoreDataProperties.m in Sources */,
+				D6B206F41CE370CD009E51FD /* ToDo.xcdatamodeld in Sources */,
 				D65EC4111CAC061200ADC0C6 /* LoginViewControler.m in Sources */,
 				D631B0AF1CCA52A3002EDD0D /* WalkthroughtViewController.m in Sources */,
 			);
@@ -700,12 +726,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D696C96D1CA96D25008C8202 /* ToDo.xcdatamodeld */ = {
+		D6B206F21CE370CD009E51FD /* ToDo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D696C96E1CA96D25008C8202 /* ToDo.xcdatamodel */,
+				D6B206F31CE370CD009E51FD /* ToDo.xcdatamodel */,
 			);
-			currentVersion = D696C96E1CA96D25008C8202 /* ToDo.xcdatamodel */;
+			currentVersion = D6B206F31CE370CD009E51FD /* ToDo.xcdatamodel */;
 			path = ToDo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -9,6 +9,7 @@
 #import "DataMenager.h"
 #import "AppDelegate.h"
 #import <MapKit/MapKit.h>
+#import "Task.h"
 
 
 @interface DataMenager()
@@ -55,6 +56,7 @@
     }
     return sharedManager;
 }
+
 - (NSMutableArray*)fetchEntity:(NSString *)entityName
                     withFilter:(NSString *)filter
                    withSortAsc:(BOOL)sortAscending
@@ -69,7 +71,8 @@
         NSArray *sortDescriptors = @ [sortDescriptior];
         [fetchRequest setSortDescriptors:sortDescriptors];
         //Filtering
-        if (filter !=nil) {
+        
+    if (filter !=nil) {
             NSPredicate *predicate= [NSPredicate predicateWithFormat:filter];
             [fetchRequest setPredicate:predicate];
         }
@@ -82,22 +85,66 @@
     return nil;
     
 }
+
 -(void)deleteObjectInDatabase:(NSManagedObject *)object {
-    
+    [self.managedObjectContext deleteObject:object];
+    [self saveToDatabase];
 }
+
 -(void)updateObject:(NSManagedObject *)object{
+    NSError *error = nil;
+    if ([object.managedObjectContext hasChanges]&& ![object.managedObjectContext save:&error]) {
+        NSLog(@"Error updating object in database: %@, %@", [error localizedDescription], [error userInfo]);
+        abort();
+    }
     
 }
 -(void)logObject:(NSManagedObject *)object{
+    NSEntityDescription *description = [object entity];
+    NSDictionary *attributes = [description attributesByName];
+    
+    for (NSString *attribute in attributes) {
+        NSLog(@"%@ = %@,",attribute,[object valueForKey:attribute]);
+    }
     
 }
 -(CGFloat)numberOfTasksPerTaskGroup:(TaskGroup)group{
-   return 0.0;
+    NSArray *tasksArray =[self fetchEntity:NSStringFromClass([Task class])
+                               withFilter:[NSString stringWithFormat:@"group = %ld",group]
+                              withSortAsc:NO
+                                   forKey:nil];
+   return tasksArray.count;
 }
 
 -(void)saveTaskWithTitle:(NSString*)title
              description: (NSString *)description
                    group: (NSInteger *)group{
+    Task *task =(Task*)[NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Task class])
+                                                     inManagedObjectContext:self.managedObjectContext];
+    task.heading = title;
+    task.desc = description;
+    if (self.userLocation) {
+        task.latitude = [NSNumber numberWithFloat:self.userLocation.coordinate.latitude];
+        task.longitude = [NSNumber numberWithFloat:self.userLocation.coordinate.longitude];
+    }
+    
+    task.data =[NSDate date];
+    task.group = [NSNumber numberWithInteger:group];
+    
+    [self saveToDatabase];
     
 }
+#pragma mark - Private API
+    
+    -(void)saveToDatabase{
+        NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+        if (managedObjectContext != nil) {
+            NSError *error = nil;
+            if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
+        }
+    }
+
 @end

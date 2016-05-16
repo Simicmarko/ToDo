@@ -267,18 +267,6 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" red="0.98431372549999996" green="0.047058823530000002" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3jP-bL-3lQ">
-                                <rect key="frame" x="0.0" y="609" width="375" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98431372549999996" green="0.047058823530000002" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="CloseButtonTapped:" destination="ZeR-mQ-LYp" eventType="touchUpInside" id="Wom-or-zJ9"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="uHd-gf-xuu">
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -323,6 +311,18 @@
                                     <outlet property="delegate" destination="ZeR-mQ-LYp" id="RO2-lo-NCa"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3jP-bL-3lQ">
+                                <rect key="frame" x="0.0" y="609" width="375" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.047058823530000002" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="CloseButtonTapped:" destination="ZeR-mQ-LYp" eventType="touchUpInside" id="Wom-or-zJ9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -533,12 +533,13 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="closeButton" destination="Abl-oE-Wsl" id="0dI-tS-OM2"/>
                         <outlet property="webView" destination="aFk-bj-Ffc" id="DcJ-J8-JLw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjn-4p-w77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951.5" y="752.5"/>
+            <point key="canvasLocation" x="1606.5" y="752.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="XP8-x8-CAD">
@@ -635,7 +636,7 @@
                         <outlet property="ProfileImageView" destination="B0H-SF-iCp" id="Huj-wx-GS3"/>
                         <segue destination="ZeR-mQ-LYp" kind="push" identifier="Walkthrough" id="CpP-LE-d3m"/>
                         <segue destination="qvQ-lF-665" kind="push" identifier="StatisticsSegue" id="SVH-tL-tBm"/>
-                        <segue destination="D04-Jo-ucB" kind="modal" identifier="AboutSegue" id="DIW-q3-P7l"/>
+                        <segue destination="D04-Jo-ucB" kind="modal" identifier="AboutSegue" id="kxA-zM-9Hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lta-7h-7W5" userLabel="First Responder" sceneMemberID="firstResponder"/>

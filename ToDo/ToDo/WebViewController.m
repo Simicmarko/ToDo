@@ -46,6 +46,10 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
         self.closeButton.alpha= ZERO_VALUE;
+   // self. urlString= @"https://www.google.rs/?client=safari&channel=mac_bm&gws_rd=cr&ei=zk48V8fTEsmysQGmlYSQDA";
+    if (self.urlString) {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
+    }
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];

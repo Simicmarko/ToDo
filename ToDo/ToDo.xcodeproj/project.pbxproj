@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D631B0AF1CCA52A3002EDD0D /* WalkthroughtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */; };
+		D64792CE1CEC8810006C5727 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D64792CD1CEC8810006C5727 /* MenuView.m */; };
+		D64792D01CEC886B006C5727 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64792CF1CEC886B006C5727 /* MenuView.xib */; };
 		D64CF8C11CB7ED4F00A41EF7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */; };
 		D64ED0021CDA1E90003AEDB0 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64ED0011CDA1E90003AEDB0 /* StatisticsViewController.m */; };
 		D64ED0051CDA2DD8003AEDB0 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64ED0041CDA2DD8003AEDB0 /* WebViewController.m */; };
@@ -85,6 +87,9 @@
 /* Begin PBXFileReference section */
 		D631B0AD1CCA52A3002EDD0D /* WalkthroughtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughtViewController.h; sourceTree = "<group>"; };
 		D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughtViewController.m; sourceTree = "<group>"; };
+		D64792CC1CEC8810006C5727 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		D64792CD1CEC8810006C5727 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		D64792CF1CEC886B006C5727 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		D64CF8BF1CB7ED4F00A41EF7 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D64CF8C01CB7ED4F00A41EF7 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D64ED0001CDA1E90003AEDB0 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
@@ -250,6 +255,9 @@
 				D696C96A1CA96D25008C8202 /* Main.storyboard */,
 				D696C9721CA96D25008C8202 /* LaunchScreen.storyboard */,
 				D6FD07261CBE721400355D13 /* Pad.storyboard */,
+				D64792CC1CEC8810006C5727 /* MenuView.h */,
+				D64792CD1CEC8810006C5727 /* MenuView.m */,
+				D64792CF1CEC886B006C5727 /* MenuView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -413,6 +421,7 @@
 			files = (
 				D696C9741CA96D25008C8202 /* LaunchScreen.storyboard in Resources */,
 				D696C9711CA96D25008C8202 /* Assets.xcassets in Resources */,
+				D64792D01CEC886B006C5727 /* MenuView.xib in Resources */,
 				D6FD07271CBE721400355D13 /* Pad.storyboard in Resources */,
 				D696C96C1CA96D25008C8202 /* Main.storyboard in Resources */,
 			);
@@ -447,6 +456,7 @@
 				D696C9661CA96D25008C8202 /* AppDelegate.m in Sources */,
 				D64ED0021CDA1E90003AEDB0 /* StatisticsViewController.m in Sources */,
 				D6B206FA1CE370E3009E51FD /* Task.m in Sources */,
+				D64792CE1CEC8810006C5727 /* MenuView.m in Sources */,
 				D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */,
 				D696C9631CA96D24008C8202 /* main.m in Sources */,
 				D64ED0051CDA2DD8003AEDB0 /* WebViewController.m in Sources */,

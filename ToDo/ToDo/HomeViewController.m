@@ -9,9 +9,12 @@
 #import "HomeViewController.h"
 #import "TaskTableViewCell.h"
 #import "Constants.h"
+#import "MenuView.h"
 
-@interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *ProfileImageView;
+@property (weak, nonatomic) IBOutlet MenuView *MenuView;
+
 
 @end
 
@@ -129,15 +132,15 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (![[NSUserDefaults standardUserDefaults]boolForKey:WALKTHROUGH_PRESENTED]) {
-        [self performSegueWithIdentifier:@"Walkthrough" sender: self];
+ // if (![[NSUserDefaults standardUserDefaults]boolForKey:WALKTHROUGH_PRESENTED]) {
+   // [self performSegueWithIdentifier:@"Walkthrough" sender: self];
     }
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"AboutSegue" sender:self];
-    });
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      // [self performSegueWithIdentifier:@"AboutSegue" sender:self];
+   // });
     
-}
+//}
 
 # pragma mark - UITableViewDelegate
 
@@ -159,6 +162,10 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+#pragma mark - MenuView Delegate
+-(void)menuViewOptionTapped:(MenuOption)option{
+    
 }
 
 @end

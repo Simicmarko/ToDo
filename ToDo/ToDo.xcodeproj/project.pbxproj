@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D608C8D81CEF2B46001D9BE1 /* TaskDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D608C8D71CEF2B46001D9BE1 /* TaskDetailsViewController.m */; };
+		D608C8DB1CEF3F5C001D9BE1 /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D608C8DA1CEF3F5C001D9BE1 /* UIViewController+Utilities.m */; };
 		D631B0AF1CCA52A3002EDD0D /* WalkthroughtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */; };
 		D64792CE1CEC8810006C5727 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D64792CD1CEC8810006C5727 /* MenuView.m */; };
 		D64792D01CEC886B006C5727 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64792CF1CEC886B006C5727 /* MenuView.xib */; };
@@ -85,6 +87,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D608C8D61CEF2B46001D9BE1 /* TaskDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailsViewController.h; sourceTree = "<group>"; };
+		D608C8D71CEF2B46001D9BE1 /* TaskDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailsViewController.m; sourceTree = "<group>"; };
+		D608C8D91CEF3F5C001D9BE1 /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		D608C8DA1CEF3F5C001D9BE1 /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
 		D631B0AD1CCA52A3002EDD0D /* WalkthroughtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughtViewController.h; sourceTree = "<group>"; };
 		D631B0AE1CCA52A3002EDD0D /* WalkthroughtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughtViewController.m; sourceTree = "<group>"; };
 		D64792CC1CEC8810006C5727 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
@@ -223,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				D64ED0041CDA2DD8003AEDB0 /* WebViewController.m */,
+				D608C8D91CEF3F5C001D9BE1 /* UIViewController+Utilities.h */,
+				D608C8DA1CEF3F5C001D9BE1 /* UIViewController+Utilities.m */,
 				D64ED0031CDA2DD8003AEDB0 /* WebViewController.h */,
 				D696C9671CA96D25008C8202 /* ViewController.h */,
 				D696C9681CA96D25008C8202 /* ViewController.m */,
@@ -231,6 +239,8 @@
 				D669D8771CC1184B00D7FE43 /* Constants.h */,
 				D669D8741CC117CD00D7FE43 /* TaskTableViewCell.h */,
 				D669D8751CC117CD00D7FE43 /* TaskTableViewCell.m */,
+				D608C8D61CEF2B46001D9BE1 /* TaskDetailsViewController.h */,
+				D608C8D71CEF2B46001D9BE1 /* TaskDetailsViewController.m */,
 				D6B206EB1CE35A66009E51FD /* DataMenager.h */,
 				D6B206EC1CE35A66009E51FD /* DataMenager.m */,
 				D65EC40F1CAC061200ADC0C6 /* LoginViewControler.h */,
@@ -459,6 +469,8 @@
 				D64792CE1CEC8810006C5727 /* MenuView.m in Sources */,
 				D65EC4141CAC092E00ADC0C6 /* SignUpViewController.m in Sources */,
 				D696C9631CA96D24008C8202 /* main.m in Sources */,
+				D608C8DB1CEF3F5C001D9BE1 /* UIViewController+Utilities.m in Sources */,
+				D608C8D81CEF2B46001D9BE1 /* TaskDetailsViewController.m in Sources */,
 				D64ED0051CDA2DD8003AEDB0 /* WebViewController.m in Sources */,
 				D6B206ED1CE35A66009E51FD /* DataMenager.m in Sources */,
 				D669D8761CC117CD00D7FE43 /* TaskTableViewCell.m in Sources */,

@@ -10,6 +10,7 @@
 #import "TaskTableViewCell.h"
 #import "Constants.h"
 #import "MenuView.h"
+#import "UIViewController+Utilities.h"
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *ProfileImageView;
@@ -102,12 +103,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.MenuView.delegate = self;
     
     
     UITapGestureRecognizer*tap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
     tap.numberOfTapsRequired =1;
     [self.ProfileImageView addGestureRecognizer:tap];
-    self.ProfileImageView.userInteractionEnabled = YES;
+   self.ProfileImageView.userInteractionEnabled = YES;
     
     [self configureProfileImage];
 }
@@ -118,16 +120,17 @@
 
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE]) {
-        self.ProfileImageView.image=[[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE] ;
+       self.ProfileImageView.image=[[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE] ;
       
         NSData*data =[[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE];
         
         self.ProfileImageView.image= [[UIImage alloc] initWithData:data];
 
     }
-    
+   
         
 };
+    
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -141,6 +144,7 @@
    // });
     
 //}
+
 
 # pragma mark - UITableViewDelegate
 
@@ -165,7 +169,25 @@
 }
 #pragma mark - MenuView Delegate
 -(void)menuViewOptionTapped:(MenuOption)option{
+    switch (option) {
+        case TASK_DETAILS_MENU_OPTION:{
+            [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
+        break;
+            case ABOUT_DETAILS_MENU_OPTION:{
+                [self performSegueWithIdentifier:@"AboutSegue" sender:nil];
+            }
+            break;
+            
+            case STATISTICS_DETAILS_MENU_OPTION:{
+                [self performSegueWithIdentifier:@"StatisticsSegue" sender:nil];
+            }
+            break;
+            
+            case WALKTHROUGH_DETAILS_MENU_OPTION:{
+                [self performSegueWithIdentifier:@"Walkthrough" sender:nil];
+            } break;
+        }
     
+    }
 }
-
-@end
+    @end

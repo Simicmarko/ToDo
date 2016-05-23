@@ -788,6 +788,11 @@
                     <connections>
                         <outlet property="MenuView" destination="raj-BQ-I9Z" id="8SC-Z9-PrJ"/>
                         <outlet property="ProfileImageView" destination="B0H-SF-iCp" id="Huj-wx-GS3"/>
+                        <outlet property="badgeImageView" destination="T0o-tv-Mek" id="bsV-Cp-Rmv"/>
+                        <outlet property="badgeLabel" destination="btd-vl-ptN" id="cnf-ss-iK7"/>
+                        <outlet property="profileImageView" destination="B0H-SF-iCp" id="XbZ-iZ-5WU"/>
+                        <outlet property="tableView" destination="rfb-Vd-gRP" id="Zyl-x5-gV5"/>
+                        <outlet property="welcomeLabel" destination="5f5-ps-RGB" id="n32-yZ-niw"/>
                         <segue destination="ZeR-mQ-LYp" kind="push" identifier="Walkthrough" id="CpP-LE-d3m"/>
                         <segue destination="qvQ-lF-665" kind="push" identifier="StatisticsSegue" id="SVH-tL-tBm"/>
                         <segue destination="D04-Jo-ucB" kind="modal" identifier="AboutSegue" id="kxA-zM-9Hn"/>

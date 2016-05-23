@@ -17,6 +17,9 @@ static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
 static NSString *const CITY_CHANGED = @"CITY_CHANGED";
 static NSString *const OK_STRING = @"OK_STRING";
 static NSString *const EMPTY_STRING = @"";
+static NSString *const LOGGED_IN = @"LOGGED_IN";
+
+
 
 // Colors
 #define kOrangeColor             COLOR(254.0, 172.0, 73.0, 1.0)

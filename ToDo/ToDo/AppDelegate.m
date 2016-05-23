@@ -16,8 +16,10 @@
 
 @implementation AppDelegate
 
+#pragma mark - UIAplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+     [self configureLocationManager];
     return YES;
 }
 
@@ -92,10 +94,6 @@
 
 #pragma mark - UIAplicationDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    [self configureLocationManager];
-
-}
 #pragma mark - CLLocationManagerDelegate
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     if (locations.count >0) {

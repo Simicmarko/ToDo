@@ -26,7 +26,7 @@
 -(CGFloat)numberOfTasksPerTaskGroup:(TaskGroup)group;
 -(void)saveTaskWithTitle:(NSString*)title
                 description: (NSString *)description
-                   group: (NSInteger *)group;
+                   group: (NSInteger)group;
 
 
 @end

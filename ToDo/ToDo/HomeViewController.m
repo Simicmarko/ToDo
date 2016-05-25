@@ -14,6 +14,8 @@
 #import "DataMenager.h"
 #import "Helpers.h"
 #import "Task.h"
+#import "WebViewController.h"
+#import "TaskDetailsViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *ProfileImageView;
@@ -24,6 +26,9 @@
 @property (weak,nonatomic)IBOutlet UILabel *badgeLabel;
 @property (weak,nonatomic)IBOutlet UILabel *welcomeLabel;
 @property (weak,nonatomic)NSMutableArray *itemsArray;
+@property (weak,nonatomic)Task *selectedTask;
+
+
 
 
 @end
@@ -36,7 +41,9 @@
                                                  withFilter:nil
                                                 withSortAsc:YES
                                                      forKey:@"data"];
+    return _itemsArray;
 }
+
 
 # pragma mark -Private API
 
@@ -45,7 +52,13 @@
     self.badgeLabel.alpha= (self.itemsArray.count ==0) ? ZERO_VALUE : 1.0;
     self.badgeLabel.text = [NSString stringWithFormat:@"%ld",self.itemsArray.count];
 }
+
 -(void)configureProfileImage {
+    UITapGestureRecognizer*tap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
+    tap.numberOfTapsRequired =1;
+    [self.ProfileImageView addGestureRecognizer:tap];
+    self.ProfileImageView.userInteractionEnabled = YES;
+    
     self. ProfileImageView.clipsToBounds= YES;
     self.ProfileImageView.layer.cornerRadius=self.ProfileImageView.frame.size.width/2;
     
@@ -61,6 +74,7 @@
     
     
 };
+
 -(void)configureWelcomeLabel{
     if ([Helpers isMorning]) {
         self.welcomeLabel.text = @"Good Morning!";
@@ -78,35 +92,34 @@
     
 }
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-        self.itemsArray.count;
+       return self.itemsArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TaskTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    TaskTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" ];
     
-    cell.taskTitleLabel.text = [NSString stringWithFormat:@"Red %ld", indexPath.row];
+    Task *task = [self.itemsArray objectAtIndex:indexPath.row];
+    cell.task = task;
     
-    switch (indexPath.row) {
-        case COMPLETED_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kTurquoColor;
-            break;
-            
-            
-        case NOT_COMPLETED_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kOrangeColor;
-            break;
-            
-            
-        case IN_PROGRESS_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kPurpleColor;
-            break;
-            
-        default:
-            cell.taskGroupView.backgroundColor = kTurquoColor;
-            break;
-    }
+    cell.task = self.itemsArray[indexPath.row];
+    
     
     return cell;
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    if (editingStyle== UITableViewCellEditingStyleDelete) {
+        Task *task = [self.itemsArray objectAtIndex:indexPath.row];
+        [[DataMenager sharedInstance]deleteObjectInDatabase:task];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [tableView reloadData];
+        [self configureBadge];
+    }
 }
 
 
@@ -154,37 +167,65 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.MenuView.delegate = self;
-    
-    
-    UITapGestureRecognizer*tap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
-    tap.numberOfTapsRequired =1;
-    [self.ProfileImageView addGestureRecognizer:tap];
-   self.ProfileImageView.userInteractionEnabled = YES;
     
     [self configureProfileImage];
+    [self configureWelcomeLabel];
+    
+    self.MenuView.delegate = self;
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    [self configureProfileImage];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+    [self configureBadge];
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
- // if (![[NSUserDefaults standardUserDefaults]boolForKey:WALKTHROUGH_PRESENTED]) {
-   // [self performSegueWithIdentifier:@"Walkthrough" sender: self];
+  if (![[NSUserDefaults standardUserDefaults]boolForKey:WALKTHROUGH_PRESENTED]) {
+    [self performSegueWithIdentifier:@"Walkthrough" sender: self];
     }
     
     //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
       // [self performSegueWithIdentifier:@"AboutSegue" sender:self];
    // });
     
-//}
+}
 
+#pragma mark - Segue Managment 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"AboutSegue"]) {
+        WebViewController *webViewController = (WebViewController *)segue.destinationViewController;
+        webViewController.urlString = CUBES_URL;
+    }
+    
+    if ([segue.identifier isEqualToString:@"TaskDetailsSegue"]) {
+        TaskDetailsViewController *taskDetailsViewController= (TaskDetailsViewController *)segue.destinationViewController;
+        taskDetailsViewController.task = self.selectedTask;
+    }
+}
 
 # pragma mark - UITableViewDelegate
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70.0;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Task *task = [self.itemsArray objectAtIndex:indexPath.row];
+    self.selectedTask = task;
+    [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
+}
+
 
 # pragma mark - UIimagePickerControlerDelegate
 
@@ -202,9 +243,13 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 #pragma mark - MenuView Delegate
+
 -(void)menuViewOptionTapped:(MenuOption)option{
     switch (option) {
+         
         case TASK_DETAILS_MENU_OPTION:{
+            self.selectedTask = nil;
+
             [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
         break;
             case ABOUT_DETAILS_MENU_OPTION:{

@@ -118,7 +118,7 @@
 
 -(void)saveTaskWithTitle:(NSString*)title
              description: (NSString *)description
-                   group: (NSInteger *)group{
+                   group: (NSInteger)group{
     Task *task =(Task*)[NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Task class])
                                                      inManagedObjectContext:self.managedObjectContext];
     task.heading = title;

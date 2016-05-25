@@ -557,6 +557,9 @@
                                 <rect key="frame" x="18" y="20" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backButtonTapped" destination="8o6-X2-z98" eventType="touchUpInside" id="ddf-dH-7zu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q3P-fn-aCv">
                                 <rect key="frame" x="270" y="160" width="64" height="64"/>
@@ -571,7 +574,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="35"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="8o6-X2-z98" id="9FF-mk-qdQ"/>
                                 </connections>
@@ -580,7 +583,7 @@
                                 <rect key="frame" x="18" y="222" width="337" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="8o6-X2-z98" id="7Yz-y8-7Et"/>
                                 </connections>
@@ -671,14 +674,12 @@
                         <outlet property="addButton" destination="Q3P-fn-aCv" id="gtH-AT-3Lm"/>
                         <outlet property="cityLabel" destination="icA-Qg-ohg" id="pez-q4-cuh"/>
                         <outlet property="completedView" destination="o1q-Au-2l9" id="2Rc-lo-OZ7"/>
-                        <outlet property="descriptionTaskField" destination="nRA-aU-g6d" id="MDY-O9-wvD"/>
                         <outlet property="descriptionTextField" destination="nRA-aU-g6d" id="5dg-GA-LTk"/>
                         <outlet property="groupSelectorImageView" destination="otJ-hh-5OL" id="Xlc-hK-VHP"/>
                         <outlet property="inProgressView" destination="trK-3m-Bta" id="lrk-CO-IIB"/>
                         <outlet property="mapButton" destination="dav-5s-KqR" id="f8f-Jg-6O1"/>
                         <outlet property="mapView" destination="va0-u6-jre" id="gAM-EN-VJF"/>
                         <outlet property="notCompletedView" destination="cbJ-JQ-4wZ" id="Vk8-x0-bix"/>
-                        <outlet property="tittleTaskField" destination="PTM-xi-mMl" id="mtd-VS-dTS"/>
                         <outlet property="tittleTextField" destination="PTM-xi-mMl" id="GcA-bK-0d4"/>
                     </connections>
                 </viewController>

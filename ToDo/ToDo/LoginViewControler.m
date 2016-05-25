@@ -7,18 +7,7 @@
 //
 
 #import "LoginViewControler.h"
-
-@interface LoginViewControler()
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-@property (weak, nonatomic) IBOutlet UIView *maskLogoView;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
-@property (weak, nonatomic) IBOutlet UIView *footerView;
-
-@property (weak, nonatomic) IBOutlet UIImageView *usernameImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@end
+#import "UIViewController+Utilities.h"
 
 @implementation LoginViewControler
 
@@ -79,6 +68,19 @@
                                                                                attributes:attributes];
     }
 }
+-(void)configureTextFieldPLaceholders {
+    NSMutableDictionary *attributes = [[NSMutableDictionary alloc]init];
+    [attributes setObject:[UIFont fontWithName:@"Avenir-Book" size:15.0] forKey:NSFontAttributeName];
+    [attributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    
+    NSAttributedString *usernamePlaceholder =[[NSAttributedString alloc] initWithString:self.usernameTextField.placeholder
+                                                                             attributes:attributes];
+    self.usernameTextField.attributedPlaceholder =usernamePlaceholder;
+    
+    NSAttributedString *passwordPlaceholder =[[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder
+                                                                             attributes:attributes];
+    self.passwordTextField.attributedPlaceholder =passwordPlaceholder;
+}
 
 #pragma mark - Actions
 
@@ -96,10 +98,34 @@
     });
 }
 
+-(IBAction)submitButtonTapped {
+    if (self.usernameTextField.text.length==0) {
+        [self presentErrorWithTittle:@"Validation" andError:@"Please add title."];
+        return;
+    }
+    if (self.passwordTextField.text.length==0) {
+        [self presentErrorWithTittle:@"Validation" andError:@"Please add short description."];
+        return;
+    }
+    NSLog(@"SIGNING IN ...");
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:LOGGED_IN];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
+    [self.activityIndicatorView startAnimating];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.activityIndicatorView stopAnimating];
+        [self performSegueWithIdentifier:@"HomeSegue" sender:self];
+    });
+    
+}
+
 #pragma mark- View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self configureTextFieldPLaceholders];
     
     [self configureTextField:self.usernameTextField];
     

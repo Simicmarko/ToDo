@@ -82,6 +82,38 @@
     self.passwordTextField.attributedPlaceholder =passwordPlaceholder;
 }
 
+-(void)registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note)
+     {
+         NSDictionary* keyboardInfo = note.userInfo;
+         NSValue* keyboardFrameBegin =[keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+         CGRect  keyboardFrameBeginRect = keyboardFrameBegin.CGRectValue;
+         
+         [UIView animateWithDuration:0.3 animations:^{
+             CGRect frame = self.containerView.frame;
+             frame.origin.y= self.view.frame.size.height - keyboardFrameBeginRect.size.height - self.containerView.frame.size.height;
+             self.containerView.frame = frame;
+         }];
+     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note)
+     {
+            [UIView animateWithDuration:0.3 animations:^{
+            CGRect frame = self.containerView.frame;
+            frame.origin.y= self.containerViewOriginY;
+            self.containerView.frame = frame;
+         }];
+     }];
+
+    
+}
+
 #pragma mark - Actions
 
 - (IBAction)SignUpButtonTapped:(UIButton *)sender {
@@ -125,13 +157,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.containerViewOriginY = self.containerView.frame.origin.y;
+    
     [self configureTextFieldPLaceholders];
     
-    [self configureTextField:self.usernameTextField];
-    
-    [self configureTextField:self.passwordTextField];
     
     [self.activityIndicatorView stopAnimating];
+    
+    [self registerForNotifications];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

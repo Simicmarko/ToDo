@@ -8,7 +8,7 @@
         <!--Login View Controler-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewControler" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LoginViewControler" storyboardIdentifier="LoginViewControler" id="BYZ-38-t0r" customClass="LoginViewControler" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,14 +39,20 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="2H3-jd-2fS"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="rvf-mF-hVy">
                                         <rect key="frame" x="92" y="64" width="290" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="done" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="8gv-Ml-jnV"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" id="DZv-TS-NQ8" userLabel="Separator">
                                         <rect key="frame" x="20" y="51" width="375" height="1"/>
@@ -76,7 +82,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="SignInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UjP-RV-O7g"/>
+                                    <action selector="submitButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="VHO-Zm-wKz"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="Mm5-9k-3B6">
@@ -126,9 +132,10 @@
                         <outlet property="footerView" destination="Mm5-9k-3B6" id="cGh-A7-sY6"/>
                         <outlet property="maskLogoView" destination="DNp-m8-xhV" id="gub-NR-6Ku"/>
                         <outlet property="passwordImageView" destination="hRF-FC-T0w" id="HwZ-40-3dL"/>
-                        <outlet property="passwordTextField" destination="rvf-mF-hVy" id="qwE-8a-ffM"/>
+                        <outlet property="passwordTextField" destination="rvf-mF-hVy" id="MnL-n9-iwN"/>
+                        <outlet property="submitButton" destination="XM6-LA-A2i" id="glt-ax-YSm"/>
                         <outlet property="usernameImageView" destination="3tq-DQ-VjR" id="uJn-Q0-K52"/>
-                        <outlet property="usernameTextField" destination="rvf-mF-hVy" id="J8h-zV-8In"/>
+                        <outlet property="usernameTextField" destination="QOi-Z3-vjn" id="KQI-7m-ctD"/>
                         <segue destination="wVu-O1-H3y" kind="push" identifier="HomeSegue" id="49a-Ag-pOZ"/>
                     </connections>
                 </viewController>
@@ -167,6 +174,9 @@
                                 <state key="normal" title="Join">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonTapped" destination="Zde-SC-rj0" eventType="touchUpInside" id="o9i-5g-Zi0"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" id="B2L-55-dbK">
                                 <rect key="frame" x="73" y="374" width="290" height="30"/>
@@ -174,6 +184,9 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Zde-SC-rj0" id="E8d-b9-a7N"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="hyz-Ch-ej2">
                                 <rect key="frame" x="73" y="263" width="290" height="30"/>
@@ -181,12 +194,18 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Zde-SC-rj0" id="LCa-07-S4T"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="0iF-0A-aqh">
                                 <rect key="frame" x="73" y="322" width="290" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Zde-SC-rj0" id="0RR-hg-PFc"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" id="pPA-XR-Sun">
                                 <rect key="frame" x="73" y="209" width="290" height="30"/>
@@ -256,6 +275,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="3q1-4a-tww"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="birthdayImageView" destination="e3c-YN-Ihn" id="7rN-zi-nYw"/>
+                        <outlet property="birthdayTextField" destination="B2L-55-dbK" id="eMG-Yp-vyW"/>
+                        <outlet property="emailImageView" destination="3e3-YO-Z7z" id="BXt-Rz-Hhz"/>
+                        <outlet property="emailTextField" destination="hyz-Ch-ej2" id="Zih-tS-J3S"/>
+                        <outlet property="passwordImageView" destination="AV9-Nb-vaH" id="LRd-HS-TdJ"/>
+                        <outlet property="passwordTextField" destination="0iF-0A-aqh" id="tGg-H0-I0g"/>
+                        <outlet property="submitButton" destination="PPH-oS-HHJ" id="38t-bK-KEf"/>
+                        <outlet property="usernameImageView" destination="XPw-ff-Ce4" id="EzP-Hu-ccT"/>
+                        <outlet property="usernameTextField" destination="pPA-XR-Sun" id="wD2-fP-6Vr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wO-1I-omv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

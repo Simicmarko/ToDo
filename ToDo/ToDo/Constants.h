@@ -19,6 +19,9 @@ static NSString *const OK_STRING = @"OK_STRING";
 static NSString *const EMPTY_STRING = @"";
 static NSString *const LOGGED_IN = @"LOGGED_IN";
 
+static NSString *const SHOW_HOME = @"SHOW_HOME";
+static NSString *const SHOW_LOGIN = @"SHOW_LOGIN";
+
 
 
 // Colors

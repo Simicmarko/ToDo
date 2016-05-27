@@ -152,6 +152,7 @@
     
 }
 
+
 #pragma mark- View lifecycle
 
 - (void)viewDidLoad {
@@ -178,5 +179,38 @@
     
     [self prepareforAnimations];
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - UITextFieldDelegate 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == self.usernameTextField) {
+        self.usernameImageView.image = [UIImage imageNamed:@"username-active"];
+    }
+    if (textField == self.passwordTextField) {
+        self.passwordImageView.image = [UIImage imageNamed:@"password-active"];
+    }
+
+}
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    self.usernameImageView.image = [UIImage imageNamed:@"username"];
+    self.passwordImageView.image = [UIImage imageNamed:@"password"];
+}
+
+
+
+
+
+
+
 
 @end

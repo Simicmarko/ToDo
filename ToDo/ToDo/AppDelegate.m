@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
 #import "DataMenager.h"
+#import "Helpers.h"
+#import "UIViewController+Utilities.h"
+#import "HomeViewController.h"
+#import "LoginViewControler.h"
 
 @interface AppDelegate() <CLLocationManagerDelegate>
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -16,10 +20,51 @@
 
 @implementation AppDelegate
 
+#pragma mark - Public API
+
+-(void)registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserverForName:SHOW_HOME
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note)
+     {
+         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+         
+         HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
+         UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:homeViewController];
+         navigationController.navigationBarHidden = YES;
+         
+         self.window.rootViewController= navigationController;
+     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:SHOW_LOGIN
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note)
+     {
+         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+         
+         LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
+         UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+         navigationController.navigationBarHidden = YES;
+         
+         self.window.rootViewController= navigationController;
+     }];
+
+    
+    
+}
 #pragma mark - UIAplicationDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
      [self configureLocationManager];
+    [self registerForNotifications];
+    
+    
+    if ([Helpers isLoggedIn]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_HOME object:nil];
+    }
     return YES;
 }
 
